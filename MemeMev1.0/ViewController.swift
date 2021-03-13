@@ -104,7 +104,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 		let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
 		UIGraphicsEndImageContext()
 
-		self.navigationController?.setNavigationBarHidden(true, animated: true)
+		self.navigationController?.setNavigationBarHidden(true, animated: false)
 		self.navigationController?.setToolbarHidden(false, animated: false)
 
 		return memedImage
