@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ErI-x5-uh7">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Meme Editor-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMev1_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pv9-O2-sPa">
+                                <rect key="frame" x="0.0" y="96" width="414" height="717"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E8I-ph-PgN">
+                                <rect key="frame" x="0.0" y="771" width="414" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="BAf-z5-EwM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qg2-TX-uzA">
+                                <rect key="frame" x="0.0" y="96" width="414" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="0RZ-pB-RsU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="E8I-ph-PgN" secondAttribute="bottom" constant="57" id="4Oy-ao-ITk" userLabel="Safe Area.bottom = Bottom Text.bottom - 8"/>
+                            <constraint firstItem="E8I-ph-PgN" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="AT0-UW-nn5"/>
+                            <constraint firstItem="E8I-ph-PgN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NFQ-ag-xlN"/>
+                            <constraint firstItem="pv9-O2-sPa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="PIT-I1-Ee6" userLabel="Image Picker View.top = Safe Area.top"/>
+                            <constraint firstItem="pv9-O2-sPa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bw7-XQ-Iqb"/>
+                            <constraint firstItem="pv9-O2-sPa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fkI-Vb-c4U"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pv9-O2-sPa" secondAttribute="trailing" id="gJ6-0Z-3Fh"/>
+                            <constraint firstItem="Qg2-TX-uzA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="h73-Xg-wLt"/>
+                            <constraint firstItem="Qg2-TX-uzA" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="jYe-vX-VHy"/>
+                            <constraint firstItem="Qg2-TX-uzA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kR0-m8-xL5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pv9-O2-sPa" secondAttribute="bottom" constant="49" id="lkl-sp-uBD" userLabel="Safe Area.bottom = Image View.bottom"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Meme Editor" id="R5C-aa-9Lu">
+                        <barButtonItem key="leftBarButtonItem" title="Share Button" image="square.and.arrow.up" catalog="system" id="7vg-w9-7GC">
+                            <connections>
+                                <action selector="shareMeme:" destination="BYZ-38-t0r" id="2gn-bj-1G8"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="keT-ah-kRL">
+                            <connections>
+                                <action selector="cancelCreateMeme:" destination="BYZ-38-t0r" id="VUp-C7-wrl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bottomText" destination="E8I-ph-PgN" id="FjN-lM-asU"/>
+                        <outlet property="imageView" destination="pv9-O2-sPa" id="nvP-eo-aPH"/>
+                        <outlet property="shareButton" destination="7vg-w9-7GC" id="erd-aT-N41"/>
+                        <outlet property="topText" destination="Qg2-TX-uzA" id="zFb-DD-Avu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="93.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zvM-9L-Pej">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ErI-x5-uh7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="20S-Tr-xM1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zLD-11-d32"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7TM-ef-VkF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+    </resources>
+</document>
