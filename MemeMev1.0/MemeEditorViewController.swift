@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemeEditorViewController.swift
 //  MemeMev1.0
 //
 //  Created by Abhijit Apte on 12/03/21.
@@ -40,6 +40,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 		textField.textAlignment = .center
 		
 		textField.text = withDefaultValue
+		
+		textField.delegate = self
 	}
 	
 	func setDefaults() {
@@ -65,22 +67,24 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 		let meme = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imageView.image!, memedImage: memedImage)
 		self.memeModel = meme
 	}
+	
+	func setToolbarVisibility(hide flag: Bool) {
+		self.navigationController?.setNavigationBarHidden(flag, animated: false)
+		self.navigationController?.setToolbarHidden(flag, animated: false)
+	}
 		
 	func generateMemedImage() -> UIImage {
 
-		self.navigationController?.setNavigationBarHidden(true, animated: true)
-		self.navigationController?.setToolbarHidden(true, animated: false)
-
+		setToolbarVisibility(hide: true)
 
 		// Render view to an image
 		UIGraphicsBeginImageContext(self.view.frame.size)
 		view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
 		let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
 		UIGraphicsEndImageContext()
-
-		self.navigationController?.setNavigationBarHidden(true, animated: false)
-		self.navigationController?.setToolbarHidden(false, animated: false)
-
+		
+		setToolbarVisibility(hide: true)
+		
 		return memedImage
 	}
 	
@@ -113,9 +117,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 		
 		// Programmatically setup a toolbar
 		setupToolbar()
-		// Set text delegates to be the view controller
-		self.topText.delegate = self
-		self.bottomText.delegate = self
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
